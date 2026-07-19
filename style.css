@@ -570,6 +570,528 @@ section {
 }
 
 /* ============================================
+   CHILDPLAY FESTIVAL GUIDE
+   ============================================ */
+.childplay-section {
+  padding: 60px 0;
+  background: linear-gradient(180deg, var(--white) 0%, #e8f5e9 50%, var(--ocean-foam) 100%);
+}
+
+/* CP Hero Banner */
+.cp-hero {
+  position: relative;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  margin-bottom: 32px;
+  box-shadow: var(--shadow-lg);
+}
+
+.cp-hero-img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+}
+
+.cp-hero-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 32px;
+  background: linear-gradient(transparent, rgba(10, 46, 92, 0.85));
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.cp-hero-title {
+  font-size: 2rem;
+  font-weight: 900;
+  margin-bottom: 4px;
+}
+
+.cp-hero-sub {
+  font-size: 1rem;
+  opacity: 0.9;
+  margin-bottom: 12px;
+}
+
+.cp-hero-meta {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  font-size: 0.85rem;
+  opacity: 0.85;
+}
+
+/* CP Tabs */
+.cp-tabs {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 28px;
+}
+
+.cp-tab {
+  padding: 10px 18px;
+  border: 2px solid #c8e6c9;
+  border-radius: 50px;
+  background: var(--white);
+  font-size: 0.85rem;
+  font-weight: 700;
+  font-family: 'Noto Sans TC', sans-serif;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+
+.cp-tab:hover {
+  border-color: var(--green-matcha);
+  color: var(--green-forest);
+  transform: translateY(-2px);
+}
+
+.cp-tab.active {
+  background: linear-gradient(135deg, var(--green-forest), #43a047);
+  color: var(--white);
+  border-color: transparent;
+  box-shadow: 0 4px 15px rgba(46, 125, 50, 0.3);
+}
+
+.cp-content {
+  display: none;
+  animation: fadeIn 0.4s ease;
+}
+
+.cp-content.active {
+  display: block;
+}
+
+/* CP Zone Cards Grid */
+.cp-zones-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 18px;
+}
+
+.cp-zone-card {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid #e8f5e9;
+  transition: var(--transition);
+  position: relative;
+}
+
+.cp-zone-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.cp-zone-icon {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+}
+
+.cp-zone-card h3 {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--ocean-deep);
+  margin-bottom: 6px;
+}
+
+.cp-zone-tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 50px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+
+.cp-tag-hot { background: linear-gradient(135deg, #ff416c, #ff4b2b); }
+.cp-tag-photo { background: linear-gradient(135deg, #667eea, #764ba2); }
+.cp-tag-thrill { background: linear-gradient(135deg, #f093fb, #f5576c); }
+.cp-tag-new { background: linear-gradient(135deg, #43e97b, #38f9d7); color: #1a2a3a; }
+.cp-tag-safe { background: linear-gradient(135deg, #4facfe, #00f2fe); }
+.cp-tag-exp { background: linear-gradient(135deg, #fa709a, #fee140); color: #1a2a3a; }
+.cp-tag-show { background: linear-gradient(135deg, #a18cd1, #fbc2eb); color: #1a2a3a; }
+
+.cp-zone-card p {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.cp-zone-tip {
+  font-size: 0.8rem;
+  color: var(--green-forest);
+  background: #e8f5e9;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+/* CP Schedule Timeline */
+.cp-schedule-wrapper {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.cp-schedule-note {
+  background: #fff8e1;
+  border: 1px solid #ffe082;
+  border-radius: var(--radius-sm);
+  padding: 12px 16px;
+  font-size: 0.85rem;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.cp-schedule-note a {
+  color: var(--ocean-mid);
+  font-weight: 700;
+}
+
+.cp-schedule-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.cp-sched-item {
+  display: flex;
+  gap: 16px;
+  padding: 14px 16px;
+  border-radius: var(--radius-sm);
+  background: var(--white);
+  border: 1px solid #e8f5e9;
+  transition: var(--transition);
+}
+
+.cp-sched-item:hover {
+  box-shadow: var(--shadow-sm);
+  transform: translateX(4px);
+}
+
+.cp-sched-time {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 800;
+  font-size: 0.95rem;
+  color: var(--green-forest);
+  min-width: 55px;
+  padding-top: 2px;
+}
+
+.cp-sched-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.cp-sched-content strong {
+  font-size: 0.95rem;
+  color: var(--ocean-deep);
+}
+
+.cp-sched-content span {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+}
+
+.cp-sched-highlight {
+  background: linear-gradient(135deg, #fff8e1, #fff3e0);
+  border-color: var(--sunset-gold);
+}
+
+.cp-sched-highlight .cp-sched-time {
+  color: var(--coral);
+}
+
+.cp-sched-warning {
+  background: #fce4ec;
+  border-color: #ef9a9a;
+}
+
+.cp-sched-warning .cp-sched-time {
+  color: #c62828;
+}
+
+.cp-sched-break {
+  background: #f3e5f5;
+  border-color: #ce93d8;
+}
+
+/* CP Tips Grid */
+.cp-tips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+.cp-tip-card {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+  border-top: 4px solid;
+}
+
+.cp-tip-money { border-top-color: var(--sunset-gold); }
+.cp-tip-save { border-top-color: var(--green-matcha); }
+.cp-tip-time { border-top-color: var(--ocean-light); }
+
+.cp-tip-card h3 {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--ocean-deep);
+  margin-bottom: 16px;
+}
+
+.cp-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+
+.cp-table th, .cp-table td {
+  padding: 8px 12px;
+  text-align: left;
+  border-bottom: 1px solid #e8f5e9;
+}
+
+.cp-table th {
+  background: var(--ocean-foam);
+  font-weight: 700;
+  color: var(--ocean-deep);
+}
+
+.cp-highlight-cell {
+  color: var(--coral);
+  font-weight: 700;
+}
+
+.cp-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cp-list li {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* CP Packing Grid */
+.cp-packing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 12px;
+}
+
+.cp-pack-item {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 16px;
+  border-radius: var(--radius-sm);
+  background: var(--white);
+  border: 1px solid #e8f5e9;
+  transition: var(--transition);
+}
+
+.cp-pack-item:hover {
+  transform: translateX(4px);
+  box-shadow: var(--shadow-sm);
+}
+
+.cp-pack-must {
+  border-left: 4px solid var(--coral);
+}
+
+.cp-pack-good {
+  border-left: 4px solid var(--ocean-light);
+}
+
+.cp-pack-icon {
+  font-size: 1.8rem;
+  min-width: 40px;
+  text-align: center;
+}
+
+.cp-pack-item strong {
+  font-size: 0.95rem;
+  color: var(--ocean-deep);
+}
+
+.cp-pack-item p {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  margin-top: 2px;
+}
+
+/* CP Transport Grid */
+.cp-transport-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.cp-transport-card {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid #e8f5e9;
+}
+
+.cp-transport-card h3 {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--ocean-deep);
+  margin-bottom: 14px;
+}
+
+/* CP Food Grid */
+.cp-food-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.cp-food-card {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid #e8f5e9;
+  position: relative;
+}
+
+.cp-food-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 50px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--white);
+  background: var(--green-forest);
+  margin-bottom: 10px;
+}
+
+.cp-food-card h3 {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--ocean-deep);
+  margin-bottom: 8px;
+}
+
+.cp-food-card p {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+}
+
+.cp-food-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.cp-food-items span {
+  padding: 4px 12px;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: #e8f5e9;
+  color: var(--green-forest);
+}
+
+/* CP Limited Events Grid */
+.cp-limited-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.cp-limited-card {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid #e8f5e9;
+  transition: var(--transition);
+}
+
+.cp-limited-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.cp-limited-hot {
+  border: 2px solid var(--sunset-gold);
+  background: linear-gradient(135deg, #fffde7, #fff8e1);
+}
+
+.cp-limited-tip {
+  border: 2px solid var(--ocean-light);
+  background: linear-gradient(135deg, var(--ocean-foam), #e1f5fe);
+}
+
+.cp-limited-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 50px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--white);
+  background: var(--ocean-mid);
+  margin-bottom: 10px;
+}
+
+.cp-limited-card h3 {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--ocean-deep);
+  margin-bottom: 8px;
+}
+
+.cp-limited-card p {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.cp-limited-time {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--green-forest);
+  background: #e8f5e9;
+  padding: 6px 12px;
+  border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+  .cp-hero-img { height: 200px; }
+  .cp-hero-title { font-size: 1.5rem; }
+  .cp-tab { padding: 8px 12px; font-size: 0.78rem; }
+  .cp-zones-grid, .cp-tips-grid, .cp-packing-grid,
+  .cp-transport-grid, .cp-food-grid, .cp-limited-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================
    ROUTE TABS SECTION
    ============================================ */
 .route-section {

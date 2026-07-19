@@ -430,12 +430,38 @@ function initSmoothScroll() {
 }
 
 // ============================================
+// CHILDPLAY FESTIVAL TABS
+// ============================================
+function initChildplayTabs() {
+  const tabs = document.getElementById('cp-tabs');
+  if (!tabs) return;
+  
+  tabs.addEventListener('click', (e) => {
+    const tab = e.target.closest('.cp-tab');
+    if (!tab) return;
+
+    // Update active tab
+    tabs.querySelectorAll('.cp-tab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+
+    // Show corresponding content
+    const cpId = tab.dataset.cp;
+    document.querySelectorAll('.cp-content').forEach(c => c.classList.remove('active'));
+    document.getElementById(`cp-${cpId}`).classList.add('active');
+
+    // Re-observe for fade-in
+    observeElements();
+  });
+}
+
+// ============================================
 // INIT
 // ============================================
 document.addEventListener('DOMContentLoaded', () => {
   renderCards();
   initFilters();
   initRouteTabs();
+  initChildplayTabs();
   initRandomPicker();
   initSmoothScroll();
   observeElements();
