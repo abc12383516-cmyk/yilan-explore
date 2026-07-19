@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🌊 宜蘭一日探索指南 — 2026 夏日版</title>
+  <meta name="description" content="2026年7月19日宜蘭一日深度探索指南，精選展覽、戶外景點、美食夜市、限定活動，附三條推薦路線與隨機景點推薦。">
+  <meta name="keywords" content="宜蘭, 旅遊, 2026, 展覽, 景點, 美食, 夜市, 一日遊">
+  <meta property="og:title" content="🌊 宜蘭一日探索指南 — 2026 夏日版">
+  <meta property="og:description" content="精選宜蘭展覽、景點、美食、限定活動，三條推薦路線任你選！">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ====== WEATHER BANNER ====== -->
+  <div class="weather-banner" id="weather-banner">
+    <span class="weather-icon">☀️</span>
+    <div class="weather-text">
+      <span>📅 2026/7/19 週日</span>
+      <span class="divider"></span>
+      <span class="temp">32–35°C</span>
+      <span class="divider"></span>
+      <span>☀️ 晴時多雲 ⛈ 午後短暫雷陣雨</span>
+      <span class="divider"></span>
+      <span>💡 防曬 + 帶雨具</span>
+    </div>
+  </div>
+
+  <!-- ====== HERO ====== -->
+  <header class="hero" id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="dot"></span>
+        <span>LIVE — 今天就出發</span>
+      </div>
+      <h1>
+        <span class="gradient-text">宜蘭</span>一日探索
+      </h1>
+      <p class="subtitle">2026 夏日版 ・ 展覽 ✦ 景點 ✦ 美食 ✦ 限定活動</p>
+      <div class="cta-group">
+        <a href="#cards-section" class="btn-primary">🗺️ 開始探索</a>
+        <button class="btn-secondary" id="hero-random-btn">🎲 隨機幫我挑</button>
+      </div>
+    </div>
+    <!-- Wave -->
+    <div class="hero-wave">
+      <svg viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,60 C360,120 720,0 1080,60 C1260,90 1380,30 1440,60 L1440,120 L0,120 Z" fill="#e0f7fa" opacity="0.5"/>
+        <path d="M0,80 C240,40 480,100 720,70 C960,40 1200,100 1440,80 L1440,120 L0,120 Z" fill="#e0f7fa" opacity="0.7">
+          <animate attributeName="d" dur="8s" repeatCount="indefinite"
+            values="M0,80 C240,40 480,100 720,70 C960,40 1200,100 1440,80 L1440,120 L0,120 Z;
+                    M0,70 C240,100 480,40 720,80 C960,100 1200,40 1440,70 L1440,120 L0,120 Z;
+                    M0,80 C240,40 480,100 720,70 C960,40 1200,100 1440,80 L1440,120 L0,120 Z"/>
+        </path>
+        <path d="M0,90 C360,60 720,100 1080,80 C1260,70 1380,100 1440,90 L1440,120 L0,120 Z" fill="white">
+          <animate attributeName="d" dur="6s" repeatCount="indefinite"
+            values="M0,90 C360,60 720,100 1080,80 C1260,70 1380,100 1440,90 L1440,120 L0,120 Z;
+                    M0,85 C360,100 720,60 1080,90 C1260,100 1380,60 1440,85 L1440,120 L0,120 Z;
+                    M0,90 C360,60 720,100 1080,80 C1260,70 1380,100 1440,90 L1440,120 L0,120 Z"/>
+        </path>
+      </svg>
+    </div>
+  </header>
+
+  <!-- ====== FILTER SECTION ====== -->
+  <section class="filter-section" id="cards-section">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-icon">🏖️</span>
+        <h2>今日精選景點</h2>
+        <p class="section-subtitle">點選分類篩選，展開卡片查看詳細資訊</p>
+      </div>
+      <div class="filter-bar fade-in" id="filter-bar">
+        <button class="filter-btn active" data-filter="all">🌟 全部</button>
+        <button class="filter-btn" data-filter="activity">🎪 活動</button>
+        <button class="filter-btn" data-filter="exhibition">🎨 展覽</button>
+        <button class="filter-btn" data-filter="outdoor">🌿 戶外</button>
+        <button class="filter-btn" data-filter="food">🍜 美食</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== CARD GRID ====== -->
+  <section class="cards-section">
+    <div class="container">
+      <div class="card-grid" id="card-grid">
+        <!-- Cards are injected by JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== ROUTE SECTION ====== -->
+  <section class="route-section" id="routes-section">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-icon">🗺️</span>
+        <h2>三條推薦路線</h2>
+        <p class="section-subtitle">依照你的心情，選一條路線深度探索</p>
+      </div>
+      <div class="route-tabs fade-in" id="route-tabs">
+        <button class="route-tab active" data-route="art">🎨 文青藝術線</button>
+        <button class="route-tab" data-route="sea">🌊 蘇澳海線</button>
+        <button class="route-tab" data-route="field">🌾 冬山田野線</button>
+      </div>
+
+      <!-- Route A: Art -->
+      <div class="route-content active" id="route-art">
+        <div class="route-timeline">
+          <div class="timeline-item fade-in">
+            <div class="timeline-dot">🌄</div>
+            <div class="timeline-card">
+              <div class="timeline-time">09:00 – 10:00</div>
+              <div class="timeline-title">猴洞坑瀑布</div>
+              <div class="timeline-desc">清晨避暑，輕鬆步行即可抵達的天然瀑布，感受負離子洗禮</div>
+            </div>
+          </div>
+          <div class="timeline-item fade-in">
+            <div class="timeline-dot">🏛️</div>
+            <div class="timeline-card">
+              <div class="timeline-time">10:30 – 12:30</div>
+              <div class="timeline-title">蘭陽博物館</div>
+              <div class="timeline-desc">參觀烏石港200年特展 + 漢本考古遺址展，感受宜蘭歷史底蘊</div>
+            </div>
+          </div>
+          <div class="timeline-item fade-in">
+            <div class="timeline-dot">🍜</div>
+            <div class="timeline-card">
+              <div class="timeline-time">12:30 – 13:30</div>
+              <div class="timeline-title">頭城老街小吃</div>
+              <div class="timeline-desc">在百年老街品嚐在地小吃，感受古樸風情</div>
+            </div>
+          </div>
+          <div class="timeline-item fade-in">
+            <div class="timeline-dot">📖</div>
+            <div class="timeline-card">
+              <div class="timeline-time">14:00 – 17:00</div>
+              <div class="timeline-title">中興文創《書的博物館》</div>
+              <div class="timeline-desc">20組國際藝術家互動裝置，待到傍晚看夜間燈光展（至22:00）</div>
+            </div>
+          </div>
+          <div class="timeline-item fade-in">
+            <div class="timeline-dot">🌙</div>
+            <div class="timeline-card">
+              <div class="timeline-time">18:00 – 20:00</div>
+              <div class="timeline-title">羅東夜市</div>
+              <div class="timeline-desc">包心粉圓、三星蔥餅、當歸羊肉湯，完美收尾</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Route B: Sea -->
+      <div class="route-content" id="route-sea">
+        <div class="route-timeline">
+          <div class="timeline-item fade-in">
+            <div class="timeline-dot">🏖️</div>
+            <div class="timeline-card">
+              <div class="timeline-time">09:00 – 10:30</div>
+              <div class="timeline-title">粉鳥林漁港</div>
+              <div class="timeline-desc">世外桃源般的秘境海灣，湛藍海水 + 奇岩景致，清晨最寧靜</div>
+            </div>
+          </div>
+          <div class="timeline-item fade-in">
+            <div class="timeline-dot">🚇</div>
+            <div class="timeline-card">
+              <div class="timeline-time">11:00 – 11:30</div>
+              <div class="timeline-title">蘇東隧道</div>
+              <div class="timeline-desc">體驗蘇澳交通古蹟，隧道內光影變幻，適合拍照</div>
+            </div>
+          </div>
+          <div class="timeline-item fade-in">
+            <div class="timeline-dot">🐟</div>
+            <div class="timeline-card">
+              <div class="timeline-time">12:00 – 13:30</div>
+              <div class="timeline-title">南方澳海鮮午餐</div>
+              <div class="timeline-desc">現撈海鮮，在漁港邊大快朵頤！</div>
+            </div>
+          </div>
+          <div class="timeline-item fade-in">
+            <div class="timeline-dot">💦</div>
+            <div class="timeline-card">
+              <div class="timeline-time">15:00 – 17:00</div>
+              <div class="timeline-title">🔥 蘇澳潑水節（今日限定！）</div>
+              <div class="timeline-desc">全鎮封街潑水大戰！帶水槍加入，今年最消暑的體驗</div>
+            </div>
+          </div>
+          <div class="timeline-item fade-in">
+            <div class="timeline-dot">🧊</div>
+            <div class="timeline-card">
+              <div class="timeline-time">17:30 – 19:00</div>
+              <div class="timeline-title">蘇澳冷泉公園</div>
+              <div class="timeline-desc">全台唯一碳酸冷泉，潑水節後泡湯超舒服（當天大眾池免費！）</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Route C: Field -->
+      <div class="route-content" id="route-field">
+        <div class="route-timeline">
+          <div class="timeline-item fade-in">
+            <div class="timeline-dot">🪁</div>
+            <div class="timeline-card">
+              <div class="timeline-time">09:00 – 11:00</div>
+              <div class="timeline-title">🔥 冬山風箏節（今日限定！）</div>
+              <div class="timeline-desc">三奇美徑上的巨型海洋風箏 × 稻田美景，太夢幻了</div>
+            </div>
+          </div>
+          <div class="timeline-item fade-in">
+            <div class="timeline-dot">🌾</div>
+            <div class="timeline-card">
+              <div class="timeline-time">11:00 – 12:00</div>
+              <div class="timeline-title">三奇美徑騎車</div>
+              <div class="timeline-desc">在金黃稻田間騎自行車，感受宜蘭田野的開闊</div>
+            </div>
+          </div>
+          <div class="timeline-item fade-in">
+            <div class="timeline-dot">🍵</div>
+            <div class="timeline-card">
+              <div class="timeline-time">12:30 – 14:00</div>
+              <div class="timeline-title">冬山紅茶季</div>
+              <div class="timeline-desc">品嚐素馨紅茶 + 在地午餐，感受茶鄉慢活</div>
+            </div>
+          </div>
+          <div class="timeline-item fade-in">
+            <div class="timeline-dot">🎉</div>
+            <div class="timeline-card">
+              <div class="timeline-time">14:30 – 17:00</div>
+              <div class="timeline-title">童玩節（冬山河親水公園）</div>
+              <div class="timeline-desc">「森歷其境」主題，大型戲水設施 + 國際民俗表演</div>
+            </div>
+          </div>
+          <div class="timeline-item fade-in">
+            <div class="timeline-dot">🏯</div>
+            <div class="timeline-card">
+              <div class="timeline-time">17:30 – 19:00</div>
+              <div class="timeline-title">傳藝中心</div>
+              <div class="timeline-desc">傳統建築園區散步 + 手作體驗，適合黃昏時分</div>
+            </div>
+          </div>
+          <div class="timeline-item fade-in">
+            <div class="timeline-dot">🌙</div>
+            <div class="timeline-card">
+              <div class="timeline-time">19:30 – 21:00</div>
+              <div class="timeline-title">羅東夜市</div>
+              <div class="timeline-desc">用夜市美食為充實的一天畫下句點</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== RANDOM PICKER ====== -->
+  <section class="random-section" id="random-section">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-icon">🎰</span>
+        <h2>選擇困難？</h2>
+        <p class="section-subtitle">讓命運幫你決定今天要去哪裡！</p>
+      </div>
+      <button class="random-btn fade-in" id="random-btn">
+        <span class="dice">🎲</span>
+        隨機幫我挑一個
+      </button>
+      <div class="random-result" id="random-result">
+        <!-- Injected by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== FOOTER ====== -->
+  <footer class="footer">
+    <span class="footer-wave">🌊</span>
+    <div class="footer-title">宜蘭一日探索指南 — 2026 夏日版</div>
+    <p>
+      資料更新：2026/7/19 ・ 出發前請至各活動官方粉專確認最新公告<br>
+      Made with ☀️ for a perfect summer day in Yilan
+    </p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
